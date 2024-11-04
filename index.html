@@ -6,28 +6,118 @@
     <title>Struk Belanja</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+   /* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  .receipt-container {
+    width: 250px;
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  header {
+    border-bottom: 1px dashed #ddd;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+  }
+  
+  header h1 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+  
+  header p {
+    font-size: 0.8em;
+    color: #555;
+  }
+  
+  .receipt-details, .total-detail {
+    text-align: left;
+    margin: 10px 0;
+  }
+  
+  .item-detail p, .total-detail p {
+    font-size: 0.85em;
+    margin: 4px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .total-detail p {
+    font-weight: bold;
+  }
+  
+  footer {
+    border-top: 1px dashed #ddd;
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+  
+  footer p {
+    font-size: 0.9em;
+  }
+  
+  .barcode {
+    margin-top: 10px;
+  }
+  
+  .barcode img {
+    width: 100%;
+    height: auto;
+  }
+  
+    </style>
+    
 <body>
     <div class="receipt-container">
         <header>
-            <h1>Struk Belanja</h1>
-            <p>ID Order: <span id="order-id">ORD12345</span></p>
+            <h1>RECEIPT</h1>
+            <p>Address: Lorem Ipsum, 020</p>
+            <p>Tel: +01 001 010 10</p>
+            <p>Date: 25/12/2019</p>
         </header>
-        
+
         <section class="receipt-details">
-            <!-- Detail Barang -->
             <div class="item-detail">
-                <p><strong>ID Barang:</strong> <span>BRG001</span></p>
-                <p><strong>ID Transaksi:</strong> <span>TRX12345</span></p>
-                <p><strong>Nama Barang:</strong> <span>Produk A</span></p>
-                <p><strong>Harga:</strong> <span>Rp 100,000</span></p>
-                <p><strong>Jumlah:</strong> <span>2</span></p>
-                <p><strong>Total:</strong> <span>Rp 200,000</span></p>
+                <p><span>Lorem</span><span>3.21</span></p>
+                <p><span>Ipsum</span><span>3.12</span></p>
+                <p><span>Dolor</span><span>2.31</span></p>
+                <p><span>Sit</span><span>48.00</span></p>
+                <p><span>Amet</span><span>11.90</span></p>
             </div>
         </section>
-        
-        <footer class="payment-status">
-            <h2>Status Pembayaran: <span class="status">Lunas</span></h2>
+
+        <div class="total-detail">
+            <p><strong>Total</strong><span>68.54</span></p>
+            <p><strong>Cash</strong><span>300.00</span></p>
+            <p><strong>Change</strong><span>33.46</span></p>
+        </div>
+
+        <footer>
+            <p>THANK YOU!</p>
         </footer>
+
+        <div class="barcode">
+            <img src="https://dummyimage.com/250x50/000/fff&text=098765432109" alt="Barcode">
+        </div>
     </div>
 </body>
 </html>
