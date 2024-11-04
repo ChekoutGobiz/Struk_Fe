@@ -1,276 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KuyJajan - Product Slider</title>
-
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Produk</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<style>
-  header {
-  background-color: #f0f0f0; /* Ganti dengan warna latar belakang yang diinginkan */
-  padding: 15px; /* Tambahkan padding agar ada jarak di dalamnya */
-}
-
-/* Atau jika elemen navigasi ada dalam div dengan kelas tertentu */
-.navbar {
-  background-color: #f0f0f0; /* Ganti dengan warna yang diinginkan */
-  padding: 15px;
-}
-
-  
-  footer {
-    background-color: #24282c;
-    color: #fff;
-    padding: 40px 0;
-  }
-
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px; /* Menambah jarak antara .footer-contact dan .footer-social */
-    padding: 20px;
-  }
-  
-  .footer-contact, .footer-social {
-    width: 45%;
-  }
-
-  .footer-contact h3, .footer-social h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: black;
-  }
-
-  .contact-info, .social-icons {
-    list-style: none;
-    padding: 0;
-  }
-
-  .contact-info li, .social-icons li {
-    margin-bottom: 10px;
-    font-size: 1rem;
-  }
-
-  .contact-info li i, .social-icons li i {
-    color: black;
-    margin-right: 8px;
-  }
-
-  .social-icons li a {
-    color: black;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-
-  .social-icons li a:hover {
-    color: black;
-  }
-
-  .footer-bottom {
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-</style>
-
 <body>
+    <header>
+        <h1>Daftar Produk</h1>
+    </header>
 
- <!-- Header -->
- <header>
-   <a href="index.html" class="logo"><img src="img/logo kuyjajan.jpg" alt="KuyJajan Logo"></a>
-   <ul class="navbar">
-     <li><a href="index.html" >Home</a></li>
-     <li><a href="about.html" >Region</a></li>
-     <li><a href="product.html" class="active">Product</a></li>
-   </ul>
-   <div class="icons-item">
-    <!-- Icon Pencarian -->
-    <div class="icon-item" style="position: relative; display: inline-block;">
-      <a href="#" id="search-icon"><i class="ri-search-line"></i></a>
-      <span>Search</span>
-      <!-- Kolom Pencarian -->
-      <div id="search-container" style="display: none; position: absolute; left: 0; top: 30px;">
-        <input type="text" placeholder="Search here..." id="search-box" style="padding: 5px; width: 200px;">
-      </div>
-    </div>
-  
-    <!-- Icon Keranjang -->
-    <div class="icon-item" style="position: relative; display: inline-block; margin-left: 20px;">
-      <a href="cart.html"><i class="ri-shopping-cart-line"></i></a>
-      <span class="cart-count">0</span>
-    </div>
-  </div>
-  
-    </div>
-   </div>
- </header>
+    <main class="product-list">
+        <!-- Contoh Kartu Produk -->
+        <div class="product-card" data-product-name="Produk A" data-product-price="100000">
+            <h2>Produk A</h2>
+            <p>Harga: Rp 100,000</p>
+            <button onclick="addToCart('Produk A', 100000)">Tambah ke Keranjang</button>
+        </div>
+        
+        <div class="product-card" data-product-name="Produk B" data-product-price="150000">
+            <h2>Produk B</h2>
+            <p>Harga: Rp 150,000</p>
+            <button onclick="addToCart('Produk B', 150000)">Tambah ke Keranjang</button>
+        </div>
+        
+        <div class="product-card" data-product-name="Produk C" data-product-price="200000">
+            <h2>Produk C</h2>
+            <p>Harga: Rp 200,000</p>
+            <button onclick="addToCart('Produk C', 200000)">Tambah ke Keranjang</button>
+        </div>
 
- <!-- Filter Dropdown -->
- <section class="filter-section">
-  <div class="container">
-      <label for="cityFilter">Filter Berdasarkan Kota:</label>
-      <select id="cityFilter">
-          <option value="all">Semua Kota</option>
-          <option value="Bandung">Bandung</option>
-          <option value="Jakarta">Jakarta</option>
-          <option value="Yogyakarta">Yogyakarta</option>
-          <option value="Semarang">Semarang</option>
-          <option value="Surabaya">Surabaya</option>
-          <option value="Malang">Malang</option>
-          <option value="Bali">Bali</option>
-          <option value="Padang">Padang</option>
-          <option value="Medan">Medan</option>
-      </select>
-  </div>
-</section>
+        <div class="product-card" data-product-name="Produk D" data-product-price="250000">
+            <h2>Produk D</h2>
+            <p>Harga: Rp 250,000</p>
+            <button onclick="addToCart('Produk D', 250000)">Tambah ke Keranjang</button>
+        </div>
+    </main>
 
- <!-- Product Grid Section -->
- <section class="product-section">
-  <div class="container">
-      <h2>Produk Tersedia</h2>
-      <div id="product-grid" class="product-grid">
-          <!-- Produk akan ditambahkan melalui JavaScript -->
-      </div>
-  </div>
-</section>
+    <footer>
+        <a href="index.html">Lihat Keranjang & Checkout</a>
+    </footer>
 
-<!-- Footer -->
-<footer>
-  <div class="footer-container">
-    <div class="footer-contact">
-      <h3>Contact Us</h3>
-      <ul class="contact-info">
-        <li><i class="ri-map-pin-2-fill"></i> Jl. Merdeka No.123, Bandung, Indonesia</li>
-        <li><i class="ri-mail-fill"></i> info@kuyjajan.com</li>
-        <li><i class="ri-phone-fill"></i> +62 856-2448-2521</li>
-      </ul>
-    </div>
-    <div class="footer-social">
-      <h3>Follow Us</h3>
-      <ul class="social-icons">
-        <li><a href="#"><i class="ri-facebook-circle-fill"></i> Facebook</a></li>
-        <li><a href="#"><i class="ri-instagram-fill"></i> Instagram</a></li>
-        <li><a href="#"><i class="ri-twitter-fill"></i> Twitter</a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
-
-<!-- JavaScript -->
-<script>
-  const products = [
-      // Bandung
-      { id: 1, city: 'Bandung', name: 'Batagor', image: 'img/batagor.png', description: 'Bakso tahu goreng khas Bandung.', discountPrice: 25000, originalPrice: 50000 },
-      { id: 2, city: 'Bandung', name: 'Seblak', image: 'img/seblak.jpg', description: 'Seblak Khas Bandung.', discountPrice: 20000, originalPrice: 40000 },
-      { id: 3, city: 'Bandung', name: 'Cilok', image: 'img/cilok.jpg', description: 'Cilok lezat dari Bandung.', discountPrice: 10000, originalPrice: 20000 },
-      { id: 4, city: 'Bandung', name: 'Sate Maranggi', image: 'img/basreng.jpeg', description: 'Basreng pedas khas Bandung.', discountPrice: 30000, originalPrice: 50000 },
-          
-      // Jakarta
-      { id: 5, city: 'Jakarta', name: 'Ketoprak', image: 'img/ketoprak.jpg', description: 'Ketoprak Jakarta.', discountPrice: 25000, originalPrice: 50000 },
-      { id: 6, city: 'Jakarta', name: 'Nasi Uduk', image: 'img/nasiuduk.png', description: 'Nasi Uduk khas Jakarta.', discountPrice: 25000, originalPrice: 50000 },
-      { id: 7, city: 'Jakarta', name: 'Kerak Telor', image: 'img/keraktelor.jpg', description: 'Kerak Telor khas Jakarta.', discountPrice: 20000, originalPrice: 40000 },
-      { id: 8, city: 'Jakarta', name: 'Soto Betawi', image: 'img/sotobetawi.jpg', description: 'Soto Betawi khas Jakarta.', discountPrice: 20000, originalPrice: 40000 },
-
-      // Yogyakarta
-      { id: 9, city: 'Yogyakarta', name: 'Gudeg', image: 'img/gudeg.jpg', description: 'Gudeg khas Yogyakarta.', discountPrice: 30000, originalPrice: 60000 },
-      { id: 10, city: 'Yogyakarta', name: 'Bakpia', image: 'img/bakpia.jpg', description: 'Bakpia khas Yogyakarta.', discountPrice: 25000, originalPrice: 50000 },
-      { id: 11, city: 'Yogyakarta', name: 'Sate Klathak', image: 'img/sateklathak.jpg', description: 'Sate Klathak khas Yogyakarta.', discountPrice: 35000, originalPrice: 70000 },
-      { id: 12, city: 'Yogyakarta', name: 'Wedang Ronde', image: 'img/wedang.jpg', description: 'Wedang Ronde khas Yogyakarta.', discountPrice: 15000, originalPrice: 30000 },
-
-      // Semarang
-      { id: 13, city: 'Semarang', name: 'Lumpia', image: 'img/lumpia.jpeg', description: 'Lumpia khas Semarang.', discountPrice: 20000, originalPrice: 40000 },
-      { id: 14, city: 'Semarang', name: 'Tahu Gimbal', image: 'img/tahugimbal.jpg', description: 'Tahu Gimbal khas Semarang.', discountPrice: 25000, originalPrice: 50000 },
-      { id: 15, city: 'Semarang', name: 'Bandeng Presto', image: 'img/bandengpresto.jpg', description: 'Bandeng Presto khas Semarang.', discountPrice: 35000, originalPrice: 70000 },
-      { id: 16, city: 'Semarang', name: 'Wingko Babat', image: 'img/wingko.jpg', description: 'Wingko Babat khas Semarang.', discountPrice: 15000, originalPrice: 30000 },
-
-      // Surabaya
-      { id: 17, city: 'Surabaya', name: 'Rujak Cingur', image: 'img/rujak.jpg', description: 'Rujak Cingur khas Surabaya.', discountPrice: 30000, originalPrice: 60000 },
-      { id: 18, city: 'Surabaya', name: 'Lontong Balap', image: 'img/lontong.jpg', description: 'Lontong Balap khas Surabaya.', discountPrice: 25000, originalPrice: 50000 },
-      { id: 19, city: 'Surabaya', name: 'Rawon', image: 'img/rawon.jpg', description: 'Rawon khas Surabaya.', discountPrice: 35000, originalPrice: 70000 },
-      { id: 20, city: 'Surabaya', name: 'Sate Kelopo', image: 'img/sate.jpg', description: 'Sate Kelopo khas Surabaya.', discountPrice: 20000, originalPrice: 40000 },
-
-      // Malang
-      { id: 21, city: 'Malang', name: 'Bakso Malang', image: 'img/baksomalang.jpeg', description: 'Bakso Malang khas Malang.', discountPrice: 20000, originalPrice: 40000 },
-      { id: 22, city: 'Malang', name: 'Angsle', image: 'img/angsle.jpg', description: 'Angsle khas Malang.', discountPrice: 15000, originalPrice: 30000 },
-      { id: 23, city: 'Malang', name: 'Cwie Mie', image: 'img/cwiemie.jpg', description: 'Cwie Mie khas Malang.', discountPrice: 25000, originalPrice: 50000 },
-      { id: 24, city: 'Malang', name: 'Orem-orem', image: 'img/oremorem.jpg', description: 'Orem-orem khas Malang.', discountPrice: 18000, originalPrice: 36000 },
-
-      // Bali
-      { id: 25, city: 'Bali', name: 'Nasi Campur', image: 'img/nasicampur.jpg', description: 'Babi Guling khas Bali.', discountPrice: 50000, originalPrice: 100000 },
-      { id: 26, city: 'Bali', name: 'Ayam Betutu', image: 'img/ayambetutu.webp', description: 'Ayam Betutu khas Bali.', discountPrice: 45000, originalPrice: 90000 },
-      { id: 27, city: 'Bali', name: 'Lawar', image: 'img/lawar.jpg', description: 'Lawar khas Bali.', discountPrice: 25000, originalPrice: 50000 },
-      { id: 28, city: 'Bali', name: 'Sate Lilit', image: 'img/satelilit.jpg', description: 'Sate Lilit khas Bali.', discountPrice: 30000, originalPrice: 60000 },
-
-      // Padang
-      { id: 29, city: 'Padang', name: 'Rendang', image: 'img/rendang.jpg', description: 'Rendang khas Padang.', discountPrice: 45000, originalPrice: 90000 },
-      { id: 30, city: 'Padang', name: 'Sate Padang', image: 'img/satepadang.jpg', description: 'Sate Padang khas Padang.', discountPrice: 30000, originalPrice: 60000 },
-      { id: 31, city: 'Padang', name: 'Dendeng Balado', image: 'img/dendengbalado.jpg', description: 'Dendeng Balado khas Padang.', discountPrice: 40000, originalPrice: 80000 },
-      { id: 32, city: 'Padang', name: 'Gulai', image: 'img/gulai.jpg', description: 'Gulai khas Padang.', discountPrice: 35000, originalPrice: 70000 },
-
-      // Medan
-      { id: 33, city: 'Medan', name: 'Bika Ambon', image: 'img/bika.jpg', description: 'Bika Ambon khas Medan.', discountPrice: 25000, originalPrice: 50000 },
-      { id: 34, city: 'Medan', name: 'Soto Medan', image: 'img/sotomedan.jpeg', description: 'Soto Medan khas Medan.', discountPrice: 20000, originalPrice: 40000 },
-      { id: 35, city: 'Medan', name: 'Lontong Medan', image: 'img/lontongmedan.jpg', description: 'Lontong Medan khas Medan.', discountPrice: 15000, originalPrice: 30000 },
-      { id: 36, city: 'Medan', name: 'Teri Medan', image: 'img/terimedan.jpg', description: 'Teri Medan khas Medan.', discountPrice: 30000, originalPrice: 60000 },
-
-
-    // Add more products for Yogyakarta, Semarang, Surabaya, Malang, Bali, Padang, Medan, etc.
-  ];
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const productGrid = document.getElementById('product-grid');
-    const cityFilter = document.getElementById('cityFilter');
-
-    // Fungsi untuk menampilkan produk berdasarkan kota
-    function displayProducts(city) {
-      productGrid.innerHTML = '';
-      const filteredProducts = city === 'all' ? products : products.filter(product => product.city === city);
-      
-      filteredProducts.forEach(product => {
-        const productCard = `
-          <div class="product-card" data-city="${product.city}">
-            <span class="label sale">Sale</span>
-            <img src="${product.image}" alt="${product.name}">
-            <h3>${product.name}</h3>
-            <p>${product.description}</p>
-            <div class="price">
-              <span class="discount-price">Rp.${product.discountPrice}</span>
-              <span class="original-price">Rp.${product.originalPrice}</span>
-            </div>
-            <button class="add-to-cart" data-id="${product.id}" data-name="${product.name}" data-price="${product.discountPrice}">+ Add</button>
-          </div>
-        `;
-        productGrid.insertAdjacentHTML('beforeend', productCard);
-      });
-    }
-
-    // Event listener untuk dropdown filter
-    cityFilter.addEventListener('change', () => {
-      const selectedCity = cityFilter.value;
-      displayProducts(selectedCity);
-    });
-
-    // Tampilkan semua produk saat halaman pertama kali dimuat
-    displayProducts('all');
-  });
-
-  document.getElementById('search-icon').addEventListener('click', (e) => {
-    e.preventDefault();
-    const searchContainer = document.getElementById('search-container');
-    searchContainer.style.display = searchContainer.style.display === 'none' ? 'block' : 'none';
-  });
-  
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
