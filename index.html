@@ -5,93 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Struk Belanja</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<style>
-   /* Reset CSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Courier New', monospace;
-  }
-  
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f4f4f4;
-  }
-  
-  .receipt-container {
-    width: 250px;
-    background-color: white;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  header {
-    border-bottom: 1px dashed #ddd;
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-  }
-  
-  header h1 {
-    font-size: 1.2em;
-    margin-bottom: 5px;
-  }
-  
-  header p {
-    font-size: 0.8em;
-    color: #555;
-  }
-  
-  .receipt-details, .total-detail {
-    text-align: left;
-    margin: 10px 0;
-  }
-  
-  .item-detail p, .total-detail p {
-    font-size: 0.85em;
-    margin: 4px 0;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .total-detail p {
-    font-weight: bold;
-  }
-  
-  footer {
-    border-top: 1px dashed #ddd;
-    padding-top: 10px;
-    margin-top: 10px;
-  }
-  
-  footer p {
-    font-size: 0.9em;
-  }
-  
-  .barcode {
-    margin-top: 10px;
-  }
-  
-  .barcode img {
-    width: 100%;
-    height: auto;
-  }
-  
+    <style>
+      /* Reset CSS */
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Courier New', monospace;
+      }
+      
+      body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          background-color: #f4f4f4;
+      }
+      
+      .receipt-container {
+          width: 300px;
+          background-color: white;
+          padding: 20px;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+          text-align: center;
+      }
+      
+      header {
+          border-bottom: 1px dashed #ddd;
+          margin-bottom: 15px;
+          padding-bottom: 10px;
+      }
+      
+      header h1 {
+          font-size: 1.5em;
+          margin-bottom: 5px;
+      }
+      
+      header p {
+          font-size: 0.9em;
+          color: #555;
+      }
+      
+      .receipt-details, .total-detail {
+          text-align: left;
+          margin: 15px 0;
+      }
+      
+      .item-detail p, .total-detail p {
+          font-size: 0.95em;
+          margin: 6px 0;
+          display: flex;
+          justify-content: space-between;
+      }
+      
+      .total-detail p {
+          font-weight: bold;
+      }
+      
+      footer {
+          border-top: 1px dashed #ddd;
+          padding-top: 10px;
+          margin-top: 15px;
+      }
+      
+      footer p {
+          font-size: 1em;
+          color: #333;
+      }
+      
+      .barcode {
+          margin-top: 15px;
+      }
+      
+      .barcode img {
+          width: 100%;
+          height: auto;
+      }
     </style>
-    
+</head>
 <body>
     <div class="receipt-container">
         <header>
             <h1>RECEIPT</h1>
             <p>Address: Sarijadi, 128</p>
-            <p>Telp: +62 856-2448-2521/p>
+            <p>Telp: +62 856-2448-2521</p>
             <p>Date: 04/11/2024</p>
         </header>
 
