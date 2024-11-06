@@ -41,6 +41,18 @@
         <a href="index.html">Lihat Keranjang & Checkout</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Array untuk menyimpan produk dalam keranjang
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Fungsi untuk menambahkan produk ke keranjang
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            alert(productName + " berhasil ditambahkan ke keranjang!");
+
+            // Simpan keranjang di localStorage agar tetap ada saat halaman berubah
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    </script>
 </body>
 </html>
