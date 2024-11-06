@@ -7,75 +7,116 @@
 }
 
 body {
-  background-color: #f0f2f5;
-  padding: 20px;
+  background-color: #f8f9fc; /* Warna latar belakang yang lebih terang */
+  padding: 30px;
+  font-size: 16px;
+  color: #333;
 }
 
 header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 header h1 {
-  font-size: 2rem;
-  color: #333;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
 }
 
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
 }
 
 .product-card {
   background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Shadow yang lebih halus */
+  padding: 25px;
   text-align: center;
-  transition: transform 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek transisi yang lebih halus */
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px); /* Mengangkat kartu sedikit lebih tinggi saat hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12); /* Bayangan lebih jelas saat hover */
 }
 
 .product-card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #4a90e2;
+  font-size: 1.8rem;
+  color: #3498db; /* Warna biru yang lebih cerah untuk judul */
+  margin-bottom: 15px;
+  font-weight: 600;
 }
 
 .product-card p {
-  font-size: 1.1rem;
-  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-bottom: 20px;
 }
 
 .product-card button {
-  background-color: #4a90e2;
+  background-color: #3498db;
   color: #fff;
   border: none;
-  border-radius: 5px;
-  padding: 10px 15px;
+  border-radius: 30px; /* Bentuk tombol lebih melengkung */
+  padding: 12px 20px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .product-card button:hover {
-  background-color: #357ab8;
+  background-color: #2980b9; /* Biru yang lebih gelap saat hover */
+  transform: translateY(-3px); /* Efek sedikit terangkat saat hover */
 }
 
 footer {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 footer a {
-  color: #4a90e2;
+  color: #3498db;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 footer a:hover {
+  color: #2980b9;
   text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .product-list {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .product-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .product-card p {
+    font-size: 1.1rem;
+  }
+
+  .product-card button {
+    font-size: 0.9rem;
+  }
 }
