@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Struk Belanja</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         /* Reset CSS */
         * {
@@ -23,7 +22,7 @@
         }
         
         .receipt-container {
-            width: 300px;
+            width: 350px;
             background-color: white;
             padding: 20px;
             border: 1px solid #ddd;
@@ -56,12 +55,17 @@
         .item-detail p, .total-detail p {
             font-size: 0.95em;
             margin: 6px 0;
-            display: flex;
-            justify-content: space-between;
+        }
+
+        .item-detail p span {
+            display: block;
+            font-size: 0.9em;
         }
         
         .total-detail p {
             font-weight: bold;
+            display: flex;
+            justify-content: space-between;
         }
         
         footer {
@@ -117,20 +121,31 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Ambil data dari localStorage
-            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            // Contoh data produk
+            const cartItems = [
+                { name: 'Nasi Goreng', quantity: 5, price: 15000 },
+                { name: 'Ayam Bakar', quantity: 3, price: 25000 },
+                { name: 'Teh Botol', quantity: 4, price: 5000 }
+            ];
+
             const itemListContainer = document.getElementById('itemList');
             const totalPriceElement = document.getElementById('totalPrice');
             const changeElement = document.getElementById('change');
 
             let total = 0;
 
-            // Menampilkan daftar produk beserta jumlah
+            // Menampilkan daftar produk beserta detail
             cartItems.forEach(item => {
                 const itemElement = document.createElement('p');
-                itemElement.innerHTML = `<span>${item.name} x ${item.quantity}</span><span>Rp ${(item.price * item.quantity).toLocaleString()}</span>`;
+                const totalPriceItem = item.price * item.quantity;
+
+                itemElement.innerHTML = `
+                    <span>${item.name}</span>
+                    <span> ${item.quantity} x Rp ${item.price.toLocaleString()} = Rp ${totalPriceItem.toLocaleString()}</span>
+                `;
+                
                 itemListContainer.appendChild(itemElement);
-                total += item.price * item.quantity;
+                total += totalPriceItem;
             });
 
             // Menampilkan total harga
@@ -147,4 +162,4 @@
         });
     </script>
 </body>
-</html>  
+</html>
