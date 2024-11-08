@@ -140,46 +140,60 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+    <script type="module">
+        import Swal from "https://cdn.jsdelivr.net/npm/sweetalert2@11/src/sweetalert2.js";
+        import { addCSS } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.9/element.js";
+        
+        addCSS("https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css");
+
+        document.addEventListener("DOMContentLoaded", function () {
             // Contoh data produk
             const cartItems = [
                 { name: 'Nasi Goreng', quantity: 5, price: 15000 },
                 { name: 'Ayam Bakar', quantity: 3, price: 25000 },
                 { name: 'Teh Botol', quantity: 4, price: 5000 }
             ];
-
-            const itemListContainer = document.getElementById('itemList');
-            const totalPriceElement = document.getElementById('totalPrice');
-            const changeElement = document.getElementById('change');
-
+        
+            const itemListContainer = document.getElementById("itemList");
+            const totalPriceElement = document.getElementById("totalPrice");
+            const changeElement = document.getElementById("change");
+        
             let total = 0;
-
+        
             // Menampilkan daftar produk beserta detail
             cartItems.forEach(item => {
-                const itemElement = document.createElement('p');
+                const itemElement = document.createElement("p");
                 const totalPriceItem = item.price * item.quantity;
-
+        
                 itemElement.innerHTML = `
                     <span>${item.name}</span>
-                    <span> ${item.quantity} x Rp ${item.price.toLocaleString()} = Rp ${totalPriceItem.toLocaleString()}</span>
+                    <span>${item.quantity} x Rp ${item.price.toLocaleString()} = Rp ${totalPriceItem.toLocaleString()}</span>
                 `;
                 
                 itemListContainer.appendChild(itemElement);
                 total += totalPriceItem;
             });
-
+        
             // Menampilkan total harga
             totalPriceElement.textContent = `Rp ${total.toLocaleString()}`;
-
+        
             // Menghitung kembalian (asumsi pembayaran Rp 300.000)
             const cash = 300000;
             const change = cash - total;
             changeElement.textContent = `Rp ${change.toLocaleString()}`;
-
+        
             // Menampilkan tanggal saat ini
-            const currentDate = new Date().toLocaleDateString('id-ID');
-            document.getElementById('date').textContent = currentDate;
+            const currentDate = new Date().toLocaleDateString("id-ID");
+            document.getElementById("date").textContent = currentDate;
+
+            // Notifikasi SweetAlert untuk konfirmasi pembuatan struk
+            Swal.fire({
+                icon: "success",
+                title: "Struk Belanja Dibuat",
+                text: "Terima kasih telah berbelanja!",
+                confirmButtonText: "OK",
+                timer: 3000
+            });
         });
     </script>
 </body>

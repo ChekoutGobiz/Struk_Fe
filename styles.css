@@ -3,120 +3,109 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 body {
-  background-color: #f8f9fc; /* Warna latar belakang yang lebih terang */
-  padding: 30px;
-  font-size: 16px;
-  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.receipt-container {
+  width: 380px;
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 0.95em;
+  transform: scale(1);
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 header {
-  text-align: center;
-  margin-bottom: 40px;
+  border-bottom: 2px solid #4caf50;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 header h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #2c3e50;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
+  font-size: 1.8em;
+  color: #4caf50;
+  margin-bottom: 5px;
 }
 
 header p {
-  font-size: 1.1rem;
-  color: #7f8c8d;
+  font-size: 0.95em;
+  color: #555;
 }
 
-.product-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
+.receipt-details,
+.total-detail {
+  text-align: left;
+  margin: 15px 0;
 }
 
-.product-card {
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Shadow yang lebih halus */
-  padding: 25px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek transisi yang lebih halus */
+.item-detail p,
+.total-detail p {
+  font-size: 1em;
+  margin: 8px 0;
+  font-weight: 500;
 }
 
-.product-card:hover {
-  transform: translateY(-8px); /* Mengangkat kartu sedikit lebih tinggi saat hover */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12); /* Bayangan lebih jelas saat hover */
+.item-detail p span {
+  display: block;
+  font-size: 0.9em;
+  color: #777;
 }
 
-.product-card h2 {
-  font-size: 1.8rem;
-  color: #3498db; /* Warna biru yang lebih cerah untuk judul */
-  margin-bottom: 15px;
-  font-weight: 600;
-}
-
-.product-card p {
-  font-size: 1.2rem;
-  color: #7f8c8d;
-  margin-bottom: 20px;
-}
-
-.product-card button {
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  border-radius: 30px; /* Bentuk tombol lebih melengkung */
-  padding: 12px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.product-card button:hover {
-  background-color: #2980b9; /* Biru yang lebih gelap saat hover */
-  transform: translateY(-3px); /* Efek sedikit terangkat saat hover */
+.total-detail p {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  color: #333;
 }
 
 footer {
-  text-align: center;
-  margin-top: 50px;
+  border-top: 2px solid #4caf50;
+  padding-top: 10px;
+  margin-top: 20px;
 }
 
-footer a {
-  color: #3498db;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 600;
-  transition: color 0.3s ease;
+footer p {
+  font-size: 1.1em;
+  color: #4caf50;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-footer a:hover {
-  color: #2980b9;
-  text-decoration: underline;
+.barcode {
+  margin-top: 20px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .product-list {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  }
+.barcode img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 5px;
+}
 
-  header h1 {
-    font-size: 2rem;
-  }
-
-  .product-card h2 {
-    font-size: 1.6rem;
-  }
-
-  .product-card p {
-    font-size: 1.1rem;
-  }
-
-  .product-card button {
-    font-size: 0.9rem;
-  }
+/* Additional Styling */
+.total-detail p span {
+  color: #4caf50;
 }
