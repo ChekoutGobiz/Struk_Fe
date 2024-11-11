@@ -29,7 +29,6 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             text-align: center;
             font-size: 0.95em;
-            transform: scale(1);
             animation: fadeIn 0.5s ease-out;
         }
 
@@ -146,14 +145,21 @@
         
         addCSS("https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css");
 
+        // Menampilkan SweetAlert saat halaman dimuat
+        Swal.fire({
+            icon: "info",
+            title: "Selamat datang!",
+            text: "Struk belanja Anda sedang diproses.",
+            confirmButtonText: "Lanjutkan",
+            timer: 3000
+        });
+
         document.addEventListener("DOMContentLoaded", function () {
             // Contoh data produk
             const cartItems = [
                 { name: 'Nasi Goreng', quantity: 5, price: 15000 },
                 { name: 'Ayam Bakar', quantity: 3, price: 25000 },
-                { name: 'Teh Botol', quantity: 4, price: 5000 },
-                { name: 'Mie Goreng', quantity: 2, price: 12000 }, // Produk baru 1
-                { name: 'Es Jeruk', quantity: 3, price: 8000 }     // Produk baru 2
+                { name: 'Teh Botol', quantity: 4, price: 5000 }
             ];
         
             const itemListContainer = document.getElementById("itemList");
