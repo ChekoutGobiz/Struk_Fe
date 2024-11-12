@@ -12,23 +12,22 @@
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
         }
-        
+
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #f9f9f9;
+            background-color: #f1f4f9;
         }
-        
+
         .receipt-container {
-            width: 380px;
-            background-color: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
             text-align: center;
-            font-size: 0.95em;
             animation: fadeIn 0.5s ease-out;
         }
 
@@ -40,18 +39,18 @@
         header {
             border-bottom: 2px solid #4CAF50;
             margin-bottom: 20px;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
 
         header h1 {
-            font-size: 1.8em;
+            font-size: 2em;
             color: #4CAF50;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
         header p {
             font-size: 0.95em;
-            color: #555;
+            color: #666;
         }
 
         .receipt-details, .total-detail {
@@ -59,40 +58,46 @@
             margin: 15px 0;
         }
 
-        .item-detail p, .total-detail p {
+        .item-detail p {
             font-size: 1em;
-            margin: 8px 0;
-            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            color: #333;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
         }
 
         .item-detail p span {
-            display: block;
-            font-size: 0.9em;
             color: #777;
         }
 
         .total-detail p {
+            font-size: 1.05em;
             font-weight: bold;
             display: flex;
             justify-content: space-between;
             color: #333;
+            padding: 10px 0;
+            border-top: 2px solid #4CAF50;
+            margin-top: 15px;
+        }
+
+        .total-detail p span {
+            color: #4CAF50;
         }
 
         footer {
-            border-top: 2px solid #4CAF50;
-            padding-top: 10px;
-            margin-top: 20px;
-        }
-
-        footer p {
-            font-size: 1.1em;
-            color: #4CAF50;
+            margin-top: 25px;
             font-weight: bold;
+            font-size: 1.2em;
+            color: #4CAF50;
             text-transform: uppercase;
         }
 
         .barcode {
             margin-top: 20px;
+            border-top: 2px solid #eee;
+            padding-top: 15px;
         }
 
         .barcode img {
@@ -102,20 +107,15 @@
             padding: 5px;
             border-radius: 5px;
         }
-
-        /* Additional Styling */
-        .total-detail p span {
-            color: #4CAF50;
-        }
     </style>
 </head>
 <body>
     <div class="receipt-container">
         <header>
-            <h1>RECEIPT</h1>
-            <p>Address: Sarijadi, 128</p>
+            <h1>Struk Belanja</h1>
+            <p>Alamat: Sarijadi, 128</p>
             <p>Telp: +62 856-2448-2521</p>
-            <p>Date: <span id="date"></span></p>
+            <p>Tanggal: <span id="date"></span></p>
         </header>
 
         <section class="receipt-details">
@@ -131,7 +131,7 @@
         </div>
 
         <footer>
-            <p>THANK YOU!</p>
+            <p>Terima Kasih!</p>
         </footer>
 
         <div class="barcode">
@@ -142,10 +142,10 @@
     <script type="module">
         import Swal from "https://cdn.jsdelivr.net/npm/sweetalert2@11/src/sweetalert2.js";
         import { addCSS } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.9/element.js";
-        
+
         addCSS("https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css");
 
-        // Menampilkan SweetAlert saat halaman dimuat
+        // SweetAlert ketika halaman dimuat
         Swal.fire({
             icon: "info",
             title: "Selamat datang!",
@@ -161,35 +161,35 @@
                 { name: 'Ayam Bakar', quantity: 3, price: 25000 },
                 { name: 'Teh Botol', quantity: 4, price: 5000 }
             ];
-        
+
             const itemListContainer = document.getElementById("itemList");
             const totalPriceElement = document.getElementById("totalPrice");
             const changeElement = document.getElementById("change");
-        
+
             let total = 0;
-        
+
             // Menampilkan daftar produk beserta detail
             cartItems.forEach(item => {
                 const itemElement = document.createElement("p");
                 const totalPriceItem = item.price * item.quantity;
-        
+
                 itemElement.innerHTML = `
-                    <span>${item.name}</span>
+                    <strong>${item.name}</strong>
                     <span>${item.quantity} x Rp ${item.price.toLocaleString()} = Rp ${totalPriceItem.toLocaleString()}</span>
                 `;
-                
+
                 itemListContainer.appendChild(itemElement);
                 total += totalPriceItem;
             });
-        
+
             // Menampilkan total harga
             totalPriceElement.textContent = `Rp ${total.toLocaleString()}`;
-        
+
             // Menghitung kembalian (asumsi pembayaran Rp 300.000)
             const cash = 300000;
             const change = cash - total;
             changeElement.textContent = `Rp ${change.toLocaleString()}`;
-        
+
             // Menampilkan tanggal saat ini
             const currentDate = new Date().toLocaleDateString("id-ID");
             document.getElementById("date").textContent = currentDate;
